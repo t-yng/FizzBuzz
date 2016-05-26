@@ -1,14 +1,17 @@
 <?php
 
-function fizzBuzz($n, $replacement, $subject) {
-  $pattern = "/^(".implode('|', range($n, 100, $n)).")$/";
-  return preg_replace($pattern, $replacement, $subject);
+function fizzBuzz($i) {
+  $array = [
+    15 => 'FizzBuzz',
+    3 => 'Fizz',
+    5 => 'Buzz'
+  ];
+  foreach ($array as $key => $value) {
+    $pattern = "/^(".implode('|', range($key, 100, $key)).")$/";
+    $i = preg_replace($pattern, $value, $i);
+  }
+  
+  echo "$i\n";
 }
 
-for($i = 1; $i <= 100; $i++) {
-  $result = $i;
-  $result = fizzBuzz(15, 'FizzBuzz', $result);
-  $result = fizzBuzz(3, 'Fizz', $result);
-  $result = fizzBuzz(5, 'Buzz', $result);
-  echo $result."\n";
-}
+array_map(fizzBuzz, range(1, 100));
