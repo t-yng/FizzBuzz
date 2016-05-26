@@ -1,17 +1,17 @@
 <?php
 
-function fizzBuzz($i) {
-  $array = [
+function a($i) {
+  $b = [
     15 => 'FizzBuzz',
     3 => 'Fizz',
     5 => 'Buzz'
   ];
-  foreach ($array as $key => $value) {
-    $pattern = "/^(".implode('|', range($key, 100, $key)).")$/";
-    $i = preg_replace($pattern, $value, $i);
+  foreach ($b as $c => $d) {
+    $e = "/^(".implode('|', range($c, 100, $c)).")$/";
+    $i = preg_replace($e, $d, $i);
   }
   
   echo "$i\n";
 }
 
-array_map(fizzBuzz, range(1, 100));
+array_map(a, range(1, 100));
