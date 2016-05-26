@@ -1,16 +1,9 @@
 <?php
 
 function a($i) {
-  $b = [
-    15 => 'FizzBuzz',
-    3 => 'Fizz',
-    5 => 'Buzz'
-  ];
-  foreach ($b as $c => $d) {
-    $e = "/^(".implode('|', range($c, 100, $c)).")$/";
-    $i = preg_replace($e, $d, $i);
-  }
-  
+  foreach ([15 => 'FizzBuzz', 3 => 'Fizz', 5 => 'Buzz'] as $b => $c) {
+    $i = preg_replace("/^(".implode('|', range($b, 100, $b)).")$/", $c, $i);
+  }  
   echo "$i\n";
 }
 
