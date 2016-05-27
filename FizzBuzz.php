@@ -1,10 +1,5 @@
 <?php
 
-function a($i) {
-  foreach ([15 => 'FizzBuzz', 3 => 'Fizz', 5 => 'Buzz'] as $b => $c) {
-    $i = preg_replace("/^(".implode('|', range($b, 100, $b)).")$/", $c, $i);
-  }  
-  echo "$i\n";
+for($i = 1; $i < 101; $i++) {
+  echo $i % 15 == 0 ? 'FizzBuzz' : ($i % 3 == 0 ? 'Fizz' : ($i % 5 == 0)? 'Buzz':$i)."\n";
 }
-
-array_map(a, range(1, 100));
